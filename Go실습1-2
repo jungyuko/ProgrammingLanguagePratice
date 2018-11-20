@@ -1,0 +1,45 @@
+package main
+import "fmt"
+
+var n int
+
+func Find_to_Max(arr [10000]int)int{
+  max := arr[0]
+  for i:= 0; i < n; i++{
+    if max > arr[i]{
+      max = max
+    } else{
+      max = arr[i]
+    }
+  }
+  return max
+}
+
+func Find_to_Min(arr [10000]int)int{
+  min := arr[0]
+  for i := 0; i < n; i++{
+    if min < arr[i] {
+      min = min
+    }else{
+      min = arr[i]
+    }
+  }
+  return min
+}
+
+func main(){
+  var x[10000]int
+  var s1 int
+  fmt.Println("몇개의 정수를 입력받으시겠습니까? ")
+  fmt.Scan(&n)
+  for i := 0; i < n; i++{
+    fmt.Printf("%d번째 정수 : ", i+1)
+    fmt.Scan(&s1)
+    x[i] = s1
+    fmt.Printf("x[%d] : ",i+1)
+    fmt.Println(x[i])
+  }
+
+  fmt.Println("max value : ", Find_to_Max(x))
+  fmt.Println("min value : ", Find_to_Min(x))
+}
